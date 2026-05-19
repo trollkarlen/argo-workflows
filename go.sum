@@ -103,8 +103,6 @@ github.com/anmitsu/go-shlex v0.0.0-20200514113438-38f4b401e2be/go.mod h1:ySMOLuW
 github.com/antihax/optional v1.0.0/go.mod h1:uupD/76wgC+ih3iEmQUL+0Ugr19nfwCT1kdvxnR2qWY=
 github.com/antlr4-go/antlr/v4 v4.13.0 h1:lxCg3LAv+EUK6t1i0y1V6/SLeUi0eKEKdhQAlS8TVTI=
 github.com/antlr4-go/antlr/v4 v4.13.0/go.mod h1:pfChB/xh/Unjila75QW7+VU4TSnWnnk9UTnmpPaOR2g=
-github.com/argoproj/argo-events v1.9.10 h1:zVC4J0sHUZd1LRRYks8XsVnx0M50KCZ1MuYoqZBOqFE=
-github.com/argoproj/argo-events v1.9.10/go.mod h1:ftbm7Gj8ycNxw56YVTY9xDUAJDa733jWBaL0M0qXz28=
 github.com/argoproj/pkg v0.13.7-0.20250123033407-65f2d4777bfd h1:lGvauSky5XrqNhzzL078KqR/I+65/KNP5IcXqTEIZ5c=
 github.com/argoproj/pkg v0.13.7-0.20250123033407-65f2d4777bfd/go.mod h1:UzNnTJT+8Fv5oc1LB2pcgXiUF+n9n+tulbaON2EBgJo=
 github.com/armon/go-socks5 v0.0.0-20160902184237-e75332964ef5 h1:0CwZNZbxp69SHPdPJAN/hZIm0C4OItdklCFmMRWYpio=
@@ -794,6 +792,8 @@ github.com/tklauser/go-sysconf v0.3.16 h1:frioLaCQSsF5Cy1jgRBrzr6t502KIIwQ0MArYI
 github.com/tklauser/go-sysconf v0.3.16/go.mod h1:/qNL9xxDhc7tx3HSRsLWNnuzbVfh3e7gh/BmM179nYI=
 github.com/tklauser/numcpus v0.11.0 h1:nSTwhKH5e1dMNsCdVBukSZrURJRoHbSEQjdEbY+9RXw=
 github.com/tklauser/numcpus v0.11.0/go.mod h1:z+LwcLq54uWZTX0u/bGobaV34u6V7KNlTZejzM6/3MQ=
+github.com/trollkarlen/argo-events v0.0.0-20260519225145-90c615c84ab9 h1:lIF6iKC6EG6TMBbquaGlZgd3L3Cp8Vo+g4/gO6jciVY=
+github.com/trollkarlen/argo-events v0.0.0-20260519225145-90c615c84ab9/go.mod h1:ftbm7Gj8ycNxw56YVTY9xDUAJDa733jWBaL0M0qXz28=
 github.com/upper/db/v4 v4.10.0 h1:u5fdqcFZAOwUZWtkS0ueQttecKcSpVF8qmBwZesS9nc=
 github.com/upper/db/v4 v4.10.0/go.mod h1:s3qHxKIKvqZNZBG5jrAPufMUXqCBmMdIHa7buGfR+OU=
 github.com/valyala/bytebufferpool v1.0.0 h1:GqA5TC/0021Y/b9FG4Oi9Mr3q7XYx6KllzawFIhcdPw=

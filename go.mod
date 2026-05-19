@@ -363,3 +363,15 @@ require (
 	sigs.k8s.io/kustomize/api v0.20.1 // indirect
 	sigs.k8s.io/kustomize/kyaml v0.20.1 // indirect
 )
+
+// Vendor a fork of github.com/argoproj/argo-events that adds support for
+// HTTP headers on the WebSocket upgrade handshake of the MQTT EventSource
+// (Authorization: Bearer <token> for OAuth-fronted brokers). The patched
+// fields land structurally in the EventSource spec; argo-server is rebuilt
+// against this vendor so the UI's create-EventSource POST path no longer
+// silently drops them.
+//
+// Drop this replace once the upstream PR
+//   https://github.com/argoproj/argo-events/pulls?q=mqtt+httpheaders
+// merges and we bump to a tagged release that includes it.
+replace github.com/argoproj/argo-events => github.com/trollkarlen/argo-events v0.0.0-20260519225145-90c615c84ab9
