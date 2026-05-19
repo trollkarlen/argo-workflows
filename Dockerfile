@@ -3,7 +3,26 @@ ARG GIT_COMMIT=unknown
 ARG GIT_TAG=unknown
 ARG GIT_TREE_STATE=unknown
 
-FROM golang:1.26.1-alpine3.23 AS builder
+# Optional pull-through registry prefix for the Docker Hub-hosted base
+# images (golang:..., node:...). Empty default = pull from Docker Hub
+# directly; when set (must end with `/`), prepends to the FROM lines
+# so Hub pulls go through the mirror instead. Useful for builds behind
+# anonymous-pull rate limits. The distroless stages below pull from
+# gcr.io directly and are unaffected.
+ARG REGISTRY_MIRROR=
+
+FROM ${REGISTRY_MIRROR}golang:1.26.1-alpine3.23 AS builder
+
+# Proxy build-args — declared so `docker build --build-arg HTTP_PROXY=...`
+# reaches the apk / wget / curl / go calls below. Empty by default, no
+# effect when unset. ARG (not ENV) so they do NOT persist into the final
+# image.
+ARG HTTP_PROXY
+ARG HTTPS_PROXY
+ARG NO_PROXY
+ARG http_proxy
+ARG https_proxy
+ARG no_proxy
 
 # libc-dev to build openapi-gen
 RUN apk update && apk add --no-cache \
@@ -26,7 +45,16 @@ COPY . .
 
 ####################################################################################################
 
-FROM node:20-alpine AS argo-ui
+FROM ${REGISTRY_MIRROR}node:20-alpine AS argo-ui
+
+# Proxy build-args — see comment in builder stage above. Needed for
+# `apk update` and `yarn install` calls behind a network proxy.
+ARG HTTP_PROXY
+ARG HTTPS_PROXY
+ARG NO_PROXY
+ARG http_proxy
+ARG https_proxy
+ARG no_proxy
 
 RUN apk update && apk add --no-cache git
 
